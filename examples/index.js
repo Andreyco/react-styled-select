@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { StyledSelect } from '../src/StyledSelect';
+import { countries } from './data';
 
 const options = [];
-for(let i=0; i<200; i++) {
-  options.push(<option key={i} value={i}>{i}</option>);
+for(const country of countries) {
+  options.push(<option key={country.name} value={country.name}>{country.name}</option>);
 }
 
 const style = {
