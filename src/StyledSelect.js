@@ -1,7 +1,12 @@
-import React, { PropTypes } from "react";
+import React, { PropTypes } from 'react';
+import Arrow from './Arrow';
 
 export const StyledSelect = React.createClass({
   propTypes: {
+    className: PropTypes.string,
+    classNamePrefix: PropTypes.string.isRequired,
+    arrowOptions: PropTypes.object,
+    wrapperOptions: PropTypes.object,
     onBlur: PropTypes.func,
     onFocus: PropTypes.func,
   },
@@ -10,10 +15,16 @@ export const StyledSelect = React.createClass({
     return { focused: false };
   },
 
+  getDefaultProps() {
+    return {
+      classNamePrefix: 'react-styled-select',
+    };
+  },
+
   onBlur(event) {
     this.setState({ focused: false });
 
-    if (this.props.onBlur) {
+    if (typeof this.props.onBlur === 'function') {
       this.props.onBlur(event);
     }
   },
@@ -21,29 +32,35 @@ export const StyledSelect = React.createClass({
   onFocus(event) {
     this.setState({ focused: true });
 
-    if (this.props.onFocus) {
+    if (typeof this.props.onFocus === 'function') {
       this.props.onFocus(event);
     }
   },
 
   render() {
     const {
-      classNamePrefix = 'react-styled-select',
-      wrapperProps = {},
-      arrowProps = {},
+      className,
+      classNamePrefix,
+      wrapperOptions = {},
+      arrowOptions = {},
+      style = {},
       ...selectProps
     } = this.props;
+
+    const { focused } = this.state;
+
     selectProps.onBlur = this.onBlur;
     selectProps.onFocus = this.onFocus;
 
-    let className = classNamePrefix;
+    let composedClassName = `${className || ''} ${classNamePrefix}`;
+
     if (this.state.focused) {
-      className += ` ${classNamePrefix}-focused`;
+      composedClassName += ` ${classNamePrefix}-focused`;
     }
 
     return (
-      <div className={className} {...wrapperProps}>
-        <div className={`${classNamePrefix}-arrow`} {...arrowProps} />
+      <div className={composedClassName} {...wrapperOptions} style={style}>
+        <Arrow classNamePrefix={classNamePrefix} {...arrowOptions} />
         <select {...selectProps} />
       </div>
     );

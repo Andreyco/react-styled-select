@@ -7,15 +7,23 @@ for(let i=0; i<200; i++) {
   options.push(<option key={i} value={i}>{i}</option>);
 }
 
-const App = () => (
-  <div>
-    <input style={{height: 32}}/>
+const style = {
+  // width: 200,
+  // maxWidth: 200,
+  // position: 'absolute',
+  // top: '50%',
+  // left: '50%',
+  // transform: 'translateY(-50%) translateX(-50%)',
+};
 
-    <StyledSelect>
-      { options }
-    </StyledSelect>
+const App = React.createClass({
+  render() {
+    return (
+      <div>
+        <StyledSelect onBlur={() => {}} children={options}  style={style}/>
+      </div>
+    );
+  }
+})
 
-    <select/>
-  </div>
-)
 render(<App />, document.getElementById('root'));
