@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
 import Arrow from './arrow';
 
-export const StyledSelect = React.createClass({
+export default React.createClass({
+  displayName: 'StyledSelect',
+
   propTypes: {
     className: PropTypes.string,
     classNamePrefix: PropTypes.string.isRequired,
