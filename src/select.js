@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Arrow from './Arrow';
+import Arrow from './arrow';
 
 export const StyledSelect = React.createClass({
   propTypes: {
