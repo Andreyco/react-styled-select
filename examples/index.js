@@ -4,9 +4,6 @@ import { countries } from './data';
 import { StyledSelect } from '../src/StyledSelect';
 import '../src/css/react-styled-select.css';
 
-const options = [];
-for(const country of countries) {
-  options.push(<option key={country.name} value={country.name}>{country.name}</option>);
-}
+const options = countries.map((name) => <option key={name} value={name}>{name}</option>);
 
-render(<StyledSelect children={options}/>, document.getElementById('root'));
+render(<StyledSelect className="centered" children={options}/>, document.getElementById('root'));
