@@ -5,7 +5,6 @@
   "description": "Simple, native to browser, select component with style easy to override. Lightweight, drop-in solution.",
   "scripts": {
     "build": "npm run clean && npm run build:webpack",
-    "start": "node server.js",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix"
   },
@@ -30,14 +29,14 @@
   "homepage": "https://github.com/Andreyco/react-styled-select",
   "devDependencies": {
     "babel-core": "^6.0.20",
-    "babel-eslint": "^4.1.3",
+    "babel-eslint": "^6.0.4",
     "babel-loader": "^6.0.1",
     "babel-preset-es2015": "^6.0.15",
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
-    "eslint": "^1.10.3",
+    "eslint": "^2.9.0",
     "eslint-plugin-babel": "^3.2.0",
-    "eslint-plugin-react": "^3.6.2",
+    "eslint-plugin-react": "^3.16.1",
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"

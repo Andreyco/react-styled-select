@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { StyledSelect } from '../src/StyledSelect';
 import { countries } from './data';
+import { StyledSelect } from '../src/StyledSelect';
+import '../src/css/react-styled-select.css';
 
 const options = [];
 for(const country of countries) {
