@@ -60,6 +60,10 @@ export default React.createClass({
       composedClassName += ` ${classNamePrefix}-focused`;
     }
 
+    if (this.props.disabled) {
+      composedClassName += ` ${classNamePrefix}-disabled`;
+    }
+
     return (
       <div className={composedClassName} {...wrapperOptions} style={style}>
         <Arrow classNamePrefix={classNamePrefix} {...arrowOptions} />
