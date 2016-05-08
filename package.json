@@ -22,7 +22,7 @@
     "component"
   ],
   "author": "Andrej Badin <contact@andrejbadin.com> (http://github.com/Andreyco)",
-  "license": "CC0-1.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Andreyco/react-styled-select/issues"
   },
