@@ -46,10 +46,15 @@
         padding: 25px 10px;
         text-align: center;
         margin-top: 100px;
+        border-top: 1px solid #ccc;
       }
 
       footer small {
         margin: 0;
+      }
+
+      section {
+        margin-bottom: 100px;
       }
 
       .gradient {
@@ -60,6 +65,17 @@
         background: -o-linear-gradient(45deg, rgba(237,248,248,1) 0%, rgba(250,244,252,1) 100%);
         background: -ms-linear-gradient(45deg, rgba(237,248,248,1) 0%, rgba(250,244,252,1) 100%);
         background: linear-gradient(45deg, rgba(237,248,248,1) 0%, rgba(250,244,252,1) 100%);
+      }
+
+      .group {
+        margin-top: 50px;
+      }
+
+      .overflow-wrapper {
+        border: 1px solid #ccc;
+      	padding: 10px;
+      	height: 10px;
+      	overflow: hidden;
       }
 
       small {
@@ -92,6 +108,8 @@
   </head>
   <body>
     <div id="root"></div>
+    <script src="https://fb.me/react-15.0.2.min.js"></script>
+    <script src="https://fb.me/react-dom-15.0.2.min.js"></script>
     <script src="/static/bundle.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
